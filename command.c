@@ -35,9 +35,11 @@ command(void)
 
 /*  attrset(COLOR_PAIR(7) | A_BOLD); */
     if (rname && first_time)
+#ifdef MASTER
 	if (wizard)
 	    msg("Hello %s.  Welcome to the Dungeons of Doom #%d.", whoami, dnum);
 	else
+#endif
 	    msg("Hello %s.  Welcome to the Dungeons of Doom.", whoami);
     first_time=0;
     if (on(player, ISHASTE))
